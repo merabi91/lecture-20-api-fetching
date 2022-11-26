@@ -21,6 +21,8 @@ btn.addEventListener("click", function() {
     async function getUrl() {
         const response = await fetch(url);
         const data = await response.json();
+        const dateData = data.created_at.slice(0,data.created_at.lenth - 10);
+        joined.innerHTML = `joined ${dateData}`;
     }
     getUrl();
 });
